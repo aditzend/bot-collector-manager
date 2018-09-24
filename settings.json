@@ -1,0 +1,25 @@
+{
+    "GOOGLE_APPLICATION_CREDENTIALS": {
+        "type": "service_account",
+        "project_id": "mitrol-ocr",
+        "private_key_id": "e7a4e32d8ae583110e21d375c12787caa2cfcf92",
+        "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDgR5UODmVIwfm2\n6WxUePBis7hzgF2zunDe3o/41BMHnjkYsShYBTKRKrNOVyO1E1LCEg1vYuIofpoU\nsh7NNnRiilyHJ6eZuPACz8PBKahO2Vlf2n7KJ6um6gqOralB/MWz4RKIFIDzqD3S\n5Shm95S+xy6k2zR6N4XasED5wVGBITB0zbh9KhzVn086m8VbfO1HgXE61ZkynMTn\nZl8mRf51U3A8N637xF9+BL1j9aJlOpA2V/n/yGIDn6RelCLnjari/jlrgOZp3OYj\nQSlfZip60JR9+Y6r0peXRhsxH+p+oN7MIEydfZ09t0lBiK2k7B6lGQcutgOerlii\nrp/4XuZrAgMBAAECggEACFfhXaJ/dhNxPLK2SvYsyx8wb2uJENSQulnBNVp+Urw6\nF4cPnyaiWPAjt3haZbQQUhPl2AzvqN380WRG7Q9niProskZxX7CXjSM5fwgTsMs5\nHe285bxQEGeIeQJQ15mVqTloPRO2MFpD4oKP3DS9ndM/EvbsntdN7XK9GA1vAMSv\nejv3HPPq+VxtsFV+8G55tYCNfzHWVx/2zeNaNOd7dHd9O6pB9MbqddYrSWcLFW5f\nEkBED7WfronFeMIKSSpIhArLvYFifD4dBDefswG//A5s9SOeQBXwqW6cev8ihUGE\nuqWa3rl32aDJ8Q8Sw7pDQH+sWIxuhAGWbtB8C+57oQKBgQDznI30xloKjN3TzJT7\nDvQXlMeT75Rt9nVJL8ev5IxmdRq2HWQCmHifPHWo0mlobxOoZ64ecDe3RwC+pM0G\nyU/d/JIoiXBqtP7AgyhNB3K1/OoFcOOgPYvVDeNp5BsnDypX0Agox5CKKew6taTg\ni76NaYpVbpzDbMCIew4g8ZaTgwKBgQDrr1siVNc4KVE6P0fCU4a4TKJy2Kj2Nj32\nKuXeD8aTmJah2ShXsircG7D71SLAUSSK6xWPHtLiKXZdX/INSn5OcOPLIPLff+IB\nQl3AjmalO+o7g3hHgV3+CO/TyIs4KK+mrbnlo30Ubqje4/yZxbJmT578fXHDMbVG\nWOHtqDkk+QKBgDssaPLvB0oOw4dB52JAVJwxwHS3ujcnqX+YgonAGzZ79XwNEZDr\n1kjfl7jlO0Npz72VSZ8NJQt4zL6CK2cdmS/TvPDpyYux4TuD4FMtnviDsZiWvkPb\nD082K2o6RTosnd1so768Eujsm/v6yUzdxPB2lWqBDsUNcor0UQ9Bf5DfAoGBAOnN\n3cSjEZY/Nrtnx1I59i2iqIzx7jvB95nbWIoAcGg/OT955BGLSAVu2xYYjA7o8C13\npL2EQIPnyeo7oi4ZNk+uoewC1a1uec/x/HtnSOCmHWnItGuLJKk8SF56VdHyWr4p\nHX93vj+kv5XN6erKOn5QglHMSCzxhPkyd36CIZ5RAoGABUwh8K79pprGOvyVA7Xk\nyLp53X2LoVSiWwSzxEJVNsr51oQT3gtbumS9F3IEiRwiysGFqut8uKvFYqQEzDfv\nQw1+Jqlr3XnZDXBXxGKdAOXTIf2BS3Ju+tLSP/f7jo3twBlJticSxGltlBNgAalG\nvCcdqC4RMXG4Hp1ybonLNp8=\n-----END PRIVATE KEY-----\n",
+        "client_email": "alexanderserviceaccount@mitrol-ocr.iam.gserviceaccount.com",
+        "client_id": "105318603634672259571",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://accounts.google.com/o/oauth2/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/alexanderserviceaccount%40mitrol-ocr.iam.gserviceaccount.com"
+    },
+    "AlexanderServiceAccount": {
+        "key": "e7a4e32d8ae583110e21d375c12787caa2cfcf92"
+    },
+    "GCP_API": {
+        "key": "AIzaSyBiArDlTmLlsIm-O-O-QLRi5Y5yvSNLPfA"
+    },
+    "TELEGRAM_BOT_API": {
+        "key": "647237163:AAHaKTBiyeX7L9yhTRrfcUb-9Ej8IqWFwlg"
+    },
+    "DF_CLIENT_API": "9078faea1aaa46489360d586fe00eefb",
+    "DEFAULT_CLIENT_APP_ID": "iWZYqELkHENCz76Sb"
+}
