@@ -44,9 +44,9 @@ Meteor.methods({
             .then((response) => {
                 const pax = response.parameters.pax
                 const geoCity = response.parameters.date
-                console.log(`ressssss`,response)
+                console.log(`params ????`,response.parameters)
                 Chat.insert({
-                    msg: `DF: ${response.fulfillment.speech}`,
+                    msg: `${response.fulfillment.speech}`,
                     origin: 'bot',
                     clientAppId: clientAppId,
                     userSessionId: userSessionId,
@@ -54,7 +54,20 @@ Meteor.methods({
                 });
                 if (response.metadata.endConversation) {
                     
-
+                    Chat.insert({
+                        msg: `-------- FIN DE LA CONVERSACIÓN -------`,
+                        origin: 'human',
+                        clientAppId: clientAppId,
+                        userSessionId: userSessionId,
+                        date: new Date()
+                    });
+                    Chat.insert({
+                        msg: `Le damos la bienvenida al sistema de reservas de Mit Hotel. ¿Cuál es su nombre?`,
+                        origin: 'bot',
+                        clientAppId: clientAppId,
+                        userSessionId: userSessionId,
+                        date: new Date()
+                    });
                     // Name
                     const nameIndex = _.findIndex(
                         response.contexts,
@@ -62,12 +75,12 @@ Meteor.methods({
                     )
                     const givenName = response.contexts[nameIndex].parameters['given-name']
 
-                    // City
-                    const cityIndex = _.findIndex(
+                    // Sede
+                    const sedeIndex = _.findIndex(
                         response.contexts,
                         (o) => o.name === 'obtained-city'
                     )
-                    const city = response.contexts[cityIndex].parameters['geo-city']
+                    const sede = response.contexts[sedeIndex].parameters['sede']
 
                     // Pax
                     const paxIndex = _.findIndex(
@@ -89,7 +102,7 @@ Meteor.methods({
                 
                     Reservations.insert({
                     givenName: givenName,
-                    city: city,
+                    sede: sede,
                     pax: Number(pax),
                     checkIn: checkIn,
                     nights: nights,
