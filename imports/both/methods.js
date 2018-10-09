@@ -42,8 +42,6 @@ Meteor.methods({
         });
         callDialogFlow(msg, userSessionId)
             .then((response) => {
-                const pax = response.parameters.pax
-                const geoCity = response.parameters.date
                 console.log(`params ????`,response.parameters)
                 Chat.insert({
                     msg: `${response.fulfillment.speech}`,
@@ -106,6 +104,7 @@ Meteor.methods({
                     pax: Number(pax),
                     checkIn: checkIn,
                     nights: nights,
+                    createdAt: new Date()
                     })
         
                 }
