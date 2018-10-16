@@ -8,6 +8,7 @@ import {
     Chat,
     Client,
     Reservations,
+    Applications,
     Banned
 } from './collections.js';
 import { callDialogFlow } from '../server/dialogflow/api'
@@ -42,7 +43,9 @@ Meteor.methods({
         });
         callDialogFlow(msg, userSessionId)
             .then((response) => {
-                console.log(`params ????`,response.parameters)
+                // console.log(`params ????`,response.parameters)
+                console.log(`contexts ???`, response.contexts)
+
                 Chat.insert({
                     msg: `${response.fulfillment.speech}`,
                     origin: 'bot',
@@ -50,8 +53,10 @@ Meteor.methods({
                     userSessionId: userSessionId,
                     date: new Date()
                 });
+               
                 if (response.metadata.endConversation) {
-                    
+                    //  console.log(`params ????`,response.parameters)
+                    //  console.log(`EOC contexts : `, response.contexts)
                     Chat.insert({
                         msg: `-------- FIN DE LA CONVERSACIÓN -------`,
                         origin: 'human',
@@ -60,7 +65,7 @@ Meteor.methods({
                         date: new Date()
                     });
                     Chat.insert({
-                        msg: `Le damos la bienvenida al sistema de reservas de Mit Hotel. ¿Cuál es su nombre?`,
+                        msg: `Le damos la bienvenida al sistema de otorgamiento de Mit Credit. ¿Cuál es su nombre?`,
                         origin: 'bot',
                         clientAppId: clientAppId,
                         userSessionId: userSessionId,
@@ -69,41 +74,43 @@ Meteor.methods({
                     // Name
                     const nameIndex = _.findIndex(
                         response.contexts,
-                        (o) => o.name === 'obtained-given-name'
+                        (o) => o.name === ''
                     )
                     const givenName = response.contexts[nameIndex].parameters['given-name']
 
                     // Sede
-                    const sedeIndex = _.findIndex(
+                    const amountIndex = _.findIndex(
                         response.contexts,
-                        (o) => o.name === 'obtained-city'
+                        (o) => o.name === 'obtained-amount'
                     )
-                    const sede = response.contexts[sedeIndex].parameters['sede']
+                    const amount = response.contexts[amountIndex].parameters['amount']
 
                     // Pax
-                    const paxIndex = _.findIndex(
+                    const payGradeIndex = _.findIndex(
                         response.contexts,
-                        (o) => o.name === 'pax'
+                        (o) => o.name === 'obtained-monthly-salary'
                     )
-                    const pax = response.contexts[paxIndex].parameters['pax']
+                    const payGrade = response.contexts[payGradeIndex].parameters['rango-salario']
 
                     // Check In
-                    const checkInIndex = _.findIndex(
+                    const seniorityIndex = _.findIndex(
                         response.contexts,
-                        (o) => o.name === 'check-in'
+                        (o) => o.name === 'obtained-seniority'
                     )
-                    const checkIn = response.contexts[checkInIndex].parameters['date']
+                    const seniority = response.contexts[seniorityIndex].parameters['seniority']
 
             
                     // Estadia
-                    const nights = response.parameters.estadia
+                    const branch = response.parameters.sucursal
+
+                    // console.log(`givenName: ${givenName}, amount: ${amount}, `);
                 
-                    Reservations.insert({
+                    Applications.insert({
                     givenName: givenName,
-                    sede: sede,
-                    pax: Number(pax),
-                    checkIn: checkIn,
-                    nights: nights,
+                    amount: Number(amount),
+                    payGrade: payGrade,
+                    seniority: seniority,
+                    branch: branch,
                     createdAt: new Date()
                     })
         

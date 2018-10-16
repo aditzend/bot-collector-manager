@@ -1,1 +1,1 @@
-import './telegram/telebot'
+// import './telegram/telebot'

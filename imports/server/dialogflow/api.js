@@ -18,7 +18,7 @@ function callDialogFlow(msg, chatId) {
         const options = {
             headers: {
                  'Content-Type': 'application/json',
-                 'Authorization': `Bearer ${Meteor.settings.DF_CLIENT_API}`
+                 'Authorization': `Bearer ${Meteor.settings.DF_CLIENT_ACESS_TOKEN}`
              },
             data: {
                  "contexts": [
